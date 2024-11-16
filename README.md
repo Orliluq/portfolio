@@ -51,7 +51,7 @@ Un diagrama visual puede ayudar a comprender mejor las relaciones entre las enti
 - Para Maven: `mvn spring-boot:run`
 - Para Gradle: `./gradlew bootRun`
 
-## Endpoints de la API
+## 📊 Endpoints de la API
 - Usuarios:
 + `GET /users`: Obtener todos los usuarios
 + `GET /users/{id}`: Obtener un usuario por ID
