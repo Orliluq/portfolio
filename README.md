@@ -53,11 +53,11 @@ Un diagrama visual puede ayudar a comprender mejor las relaciones entre las enti
 
 ## Endpoints de la API
 - Usuarios:
--- `GET /users`: Obtener todos los usuarios
--- `GET /users/{id}`: Obtener un usuario por ID
--- `POST /users`: Crear un nuevo usuario
--- `PUT /users/{id}`: Actualizar un usuario
--- `DELETE /users/{id}`: Eliminar un usuario
++ `GET /users`: Obtener todos los usuarios
++ `GET /users/{id}`: Obtener un usuario por ID
++ `POST /users`: Crear un nuevo usuario
++ `PUT /users/{id}`: Actualizar un usuario
++ `DELETE /users/{id}`: Eliminar un usuario
 - Proyectos, Experiencias, Educación, Habilidades, Contactos:... (similar a los usuarios)
 
 # 📝 API Documentation
