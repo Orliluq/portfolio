@@ -1,0 +1,943 @@
+{
+	"info": {
+		"_postman_id": "883aa3c6-ff56-4503-8ff1-21539ab65490",
+		"name": "Portfolio Backend",
+		"description": "## **Introducción** 📝\n\nEste proyecto es una API REST para la gestión de portfolios de usuarios, diseñada para desarrolladores que necesitan almacenar y administrar información relacionada con su perfil profesional, como habilidades, proyectos, experiencia, educación y certificados. La API está construida en Java utilizando Spring Boot y sigue una arquitectura basada en controladores para permitir la comunicación entre el cliente y el servidor. Con esta API, los usuarios pueden crear, leer, actualizar y eliminar información de su perfil, facilitando la construcción de aplicaciones front-end para visualización de portfolios.\n\n### Descripción del Proyecto 🚀\n\nLa API de Portfolio de Usuarios proporciona un conjunto de endpoints para gestionar los diferentes aspectos de un perfil profesional. Cada usuario puede almacenar detalles sobre sus habilidades, proyectos, experiencia laboral, formación académica, idiomas y certificados. Además, la API maneja relaciones entre los diferentes elementos, como la asociación de cada proyecto, experiencia o habilidad a un usuario específico.\n\n#### Características principales:\n\n1. **Gestión de Usuarios**: La API permite CRUD completo (Crear, Leer, Actualizar y Eliminar) para la información de los usuarios, incluyendo sus datos personales como nombre y correo electrónico.\n    \n2. **Módulo de Habilidades**: Los usuarios pueden agregar y gestionar sus habilidades con detalles como el nombre de la habilidad y el nivel de dominio.\n    \n3. **Módulo de Proyectos**: Permite a los usuarios registrar sus proyectos con información detallada, incluyendo una breve descripción, URL, y una imagen asociada.\n    \n4. **Experiencia y Educación**: La API permite almacenar información sobre la experiencia laboral y la educación de los usuarios, lo que facilita la creación de un perfil profesional completo.\n    \n5. **Idiomas y Certificaciones**: Los usuarios pueden agregar información sobre los idiomas que dominan y los certificados obtenidos, con detalles adicionales sobre cada uno.\n    \n6. **Relación de Datos**: Cada usuario tiene relaciones establecidas con sus proyectos, habilidades, experiencia, educación, y otros atributos, lo cual se gestiona mediante el uso de JPA (Java Persistence API).\n    \n\n### Arquitectura y Tecnología 🏗️\n\nEste proyecto está desarrollado en **Java** utilizando **Spring Boot**, lo que facilita la configuración y el despliegue de la API. Utiliza **JPA** para el mapeo de las entidades a la base de datos y **Hibernate** como proveedor ORM. Además, la validación de datos se maneja mediante anotaciones de **Jakarta Validation** para asegurar la integridad y consistencia de los datos en cada operación de entrada.\n\nEsta API es escalable y fácil de mantener, y puede integrarse con cualquier aplicación frontend, permitiendo a los desarrolladores gestionar la información de los portfolios de sus usuarios de manera eficiente.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28075095",
+		"_collection_link": "https://orli-dun.postman.co/workspace/portfolio-backend~6f576282-48c5-450f-bfa8-65bf647e24bb/collection/28075095-883aa3c6-ff56-4503-8ff1-21539ab65490?action=share&source=collection_link&creator=28075095"
+	},
+	"item": [
+		{
+			"name": "Certificates",
+			"item": [
+				{
+					"name": "getAllCertificates",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}certificates",
+							"host": [
+								"{{url}}certificates"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createCertificate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"certificates\": \"AWS Certified Solutions Architect\",\r\n    \"year\": 2022,\r\n    \"user\": {\r\n        \"id\": 1\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}certificates",
+							"host": [
+								"{{url}}certificates"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateCertificate",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"certificates\": \"AWS Certified Developer\",\r\n    \"year\": 2023,\r\n    \"user\": {\r\n        \"id\": 1\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}certificates/1",
+							"host": [
+								"{{url}}certificates"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteCertificate",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}certificates/1",
+							"host": [
+								"{{url}}certificates"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "<img src=\"https://content.pstmn.io/6ad14c0d-52ef-4f0d-a310-52abec34d5f2/Y2VyLnBuZw==\" alt=\"\">"
+		},
+		{
+			"name": "Contact",
+			"item": [
+				{
+					"name": "getAllContacts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}contacts",
+							"host": [
+								"{{url}}contacts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getContactById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}contacts/1",
+							"host": [
+								"{{url}}contacts"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getContactByEmail",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}contacts/email/orlibet@gmail.com",
+							"host": [
+								"{{url}}contacts"
+							],
+							"path": [
+								"email",
+								"orlibet@gmail.com"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createContact",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"phone\": \"555123456\",\r\n    \"email\": \"carlos.martinez@example.com\",\r\n    \"address\": \"Calle Nueva 789, Ciudad\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}contacts",
+							"host": [
+								"{{url}}contacts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateContact",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"phone\": \"555987654\",\r\n    \"email\": \"carlos.martinez@example.com\",\r\n    \"address\": \"Avenida Principal 123, Ciudad\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}contacts/1",
+							"host": [
+								"{{url}}contacts"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteContact",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}contacts/2",
+							"host": [
+								"{{url}}contacts"
+							],
+							"path": [
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "<img src=\"https://content.pstmn.io/a30d1152-2ea9-4ce4-a77c-3dcec12ec576/Y29udGFjdC5wbmc=\" alt=\"\">"
+		},
+		{
+			"name": "Educations",
+			"item": [
+				{
+					"name": "getAllEducations",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}educations",
+							"host": [
+								"{{url}}educations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getEducationById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}educations/1",
+							"host": [
+								"{{url}}educations"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getEducationsByUserId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}educations/user/2",
+							"host": [
+								"{{url}}educations"
+							],
+							"path": [
+								"user",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createEducation",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"institution\": \"Universidad Tecnológica\",\r\n    \"degree\": \"Maestría en Inteligencia Artificial\",\r\n    \"startDate\": \"2021-09-01\",\r\n    \"endDate\": \"2023-06-30\",\r\n    \"description\": \"Formación avanzada en IA y machine learning\",\r\n    \"user\": {\r\n        \"id\": 1\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}educations",
+							"host": [
+								"{{url}}educations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateEducation",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"institution\": \"Universidad Tecnológica Avanzada\",\r\n    \"degree\": \"Maestría en Inteligencia Artificial y Data Science\",\r\n    \"startDate\": \"2021-09-01\",\r\n    \"endDate\": \"2024-05-30\",\r\n    \"description\": \"Formación avanzada en IA, machine learning y big data\",\r\n    \"user\": {\r\n        \"id\": 1\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}educations/1",
+							"host": [
+								"{{url}}educations"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteEducation",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}educations/1",
+							"host": [
+								"{{url}}educations"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "<img src=\"https://content.pstmn.io/aae17ac8-7184-4e1d-a543-3dcfef7b2a17/My5wbmc=\" alt=\"\">"
+		},
+		{
+			"name": "Experiences",
+			"item": [
+				{
+					"name": "getAllExperiences",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}experiences",
+							"host": [
+								"{{url}}experiences"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getExperienceById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}experiences/1",
+							"host": [
+								"{{url}}experiences"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getExperiencesByUserId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}experiences/user/2",
+							"host": [
+								"{{url}}experiences"
+							],
+							"path": [
+								"user",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createExperience",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"company\": \"Global Tech\",\r\n    \"position\": \"Senior Frontend Developer\",\r\n    \"startDate\": \"2023-01-01\",\r\n    \"endDate\": \"2024-12-31\",\r\n    \"description\": \"Desarrollar aplicaciones frontend con Angular y gestionar equipos de trabajo.\",\r\n    \"user\": {\r\n        \"id\": 1\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}experiences",
+							"host": [
+								"{{url}}experiences"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateExperience",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"company\": \"Global Tech\",\r\n    \"position\": \"Lead Frontend Developer\",\r\n    \"startDate\": \"2023-01-01\",\r\n    \"endDate\": \"2025-12-31\",\r\n    \"description\": \"Liderar el equipo de desarrollo frontend con tecnologías modernas como React.\",\r\n    \"user\": {\r\n        \"id\": 1\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}experiences/1",
+							"host": [
+								"{{url}}experiences"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteExperience",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}experiences/1",
+							"host": [
+								"{{url}}experiences"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "<img src=\"https://content.pstmn.io/8d537c96-1891-4fcb-a025-8b522a5e22c1/ZXhwLnBuZw==\" width=\"550\" height=\"430\">"
+		},
+		{
+			"name": "Languages",
+			"item": [
+				{
+					"name": "getAllLanguages",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}languages",
+							"host": [
+								"{{url}}languages"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createLanguage",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"languages\": \"French\",\r\n  \"level\": \"Intermediate\",\r\n  \"user\": {\r\n    \"id\": 1\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}languages",
+							"host": [
+								"{{url}}languages"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateLanguage",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"languages\": \"German\",\r\n    \"level\": \"Beginner\",\r\n    \"user\": {\r\n        \"id\": 1\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}languages/1",
+							"host": [
+								"{{url}}languages"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteLanguage",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}languages/1",
+							"host": [
+								"{{url}}languages"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "<img src=\"https://content.pstmn.io/0a3fd977-7217-47b2-90df-741f2fdf8daf/bGFuLnBuZw==\" alt=\"\">"
+		},
+		{
+			"name": "Skills",
+			"item": [
+				{
+					"name": "getAllSkills",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}skills",
+							"host": [
+								"{{url}}skills"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findByUserId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}skills/user/1",
+							"host": [
+								"{{url}}skills"
+							],
+							"path": [
+								"user",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createSkill",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"skillName\": \"JavaScript\",\r\n    \"proficiency\": \"Advanced\",\r\n    \"user\": {\r\n        \"id\": 1\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}skills",
+							"host": [
+								"{{url}}skills"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateSkill",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"skillName\": \"JavaScript\",\r\n  \"proficiency\": \"Expert\",\r\n  \"user\": {\r\n    \"id\": 1\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}skills/31",
+							"host": [
+								"{{url}}skills"
+							],
+							"path": [
+								"31"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteSkill",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}skills/31",
+							"host": [
+								"{{url}}skills"
+							],
+							"path": [
+								"31"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "<img src=\"https://content.pstmn.io/96662106-e6c7-47e0-b9d8-3ccb89aae4f7/c2tpLnBuZw==\" alt=\"\">"
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "getUserById",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}users/1",
+							"host": [
+								"{{url}}users"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllUsers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}users",
+							"host": [
+								"{{url}}users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Maria Garcia\",\r\n    \"email\": \"maria.garcia@example.com\",\r\n    \"contact\": {\r\n        \"phone\": \"987-654-3210\",\r\n        \"address\": \"456 Park Ave\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}users",
+							"host": [
+								"{{url}}users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateUser",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Maria Garcia Updated\",\r\n    \"email\": \"maria.garcia.updated@example.com\",\r\n    \"contact\": {\r\n        \"phone\": \"987-654-3210\",\r\n        \"address\": \"456 Park Ave\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}users/1",
+							"host": [
+								"{{url}}users"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteUser",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}users/1",
+							"host": [
+								"{{url}}users"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "<img src=\"https://content.pstmn.io/2be752ad-be87-4fa1-b34c-7ef57db0070d/dXNlLnBuZw==\" alt=\"\">"
+		},
+		{
+			"name": "Projects",
+			"item": [
+				{
+					"name": "getAllProjects",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}projects",
+							"host": [
+								"{{url}}projects"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getProjectById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}projects/1",
+							"host": [
+								"{{url}}projects"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createProject",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"projectName\": \"Portfolio Website\",\r\n    \"description\": \"A personal portfolio to showcase my projects and skills.\",\r\n    \"url\": \"https://portfolio.com\",\r\n    \"image\": \"https://portfolio.com/image.jpg\",\r\n    \"user\": {\r\n        \"id\": 1\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}projects",
+							"host": [
+								"{{url}}projects"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateProject",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"projectName\": \"Updated Portfolio Website\",\r\n    \"description\": \"A revamped personal portfolio with new features.\",\r\n    \"url\": \"https://newportfolio.com\",\r\n    \"image\": \"https://newportfolio.com/image.jpg\",\r\n    \"user\": {\r\n        \"id\": 1\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}projects/1",
+							"host": [
+								"{{url}}projects"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteProject",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}projects/1",
+							"host": [
+								"{{url}}projects"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "<img src=\"https://content.pstmn.io/5bd95f82-1e62-495f-93c3-75223c2a185d/cHJvLnBuZw==\" alt=\"\">"
+		},
+		{
+			"name": "data",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"users\": [\r\n    {\r\n      \"user_id\": 1,\r\n      \"portfolio_id\": 1,\r\n      \"name\": \"Orli Dun\",\r\n      \"email\": \"orlibet@gmail.com\",\r\n      \"description\": \"¡API para la gestión de mis proyectos personales. Detalles: API RESTful utilizando Java, Spring Boot y PostgreSQL. La API debe permitir la creación, lectura, actualización y eliminación de proyectos en una base de datos relacional.\",\r\n      \"contact\": {\r\n        \"contact_id\": 1,\r\n        \"phone\": \"123456789\",\r\n        \"email\": \"orlibet@gmail.com\",\r\n        \"address\": \"Caracas, Venezuela\"\r\n      },\r\n      \"projects\": [\r\n        {\r\n          \"id\": 1,\r\n          \"projectName\": \"🎃 Halloween Trivia API 🎃\",\r\n          \"description\": \"Este proyecto implica el desarrollo de una API RESTful en Java que sirve como un juego de preguntas centrado en Halloween.\",\r\n          \"url\": \"https://github.com/Orliluq/trivia\",\r\n          \"image\": \"https://i.ibb.co/ThjGzSM/trivia.png\"\r\n        },\r\n        {\r\n          \"id\": 2,\r\n          \"projectName\": \"👻 API de Monstruos 👻\",\r\n          \"description\": \"Este proyecto te invita a crear una API RESTful en Java para gestionar una base de datos de criaturas de Halloween.\",\r\n          \"url\": \"https://github.com/Orliluq/monster\",\r\n          \"image\": \"https://i.ibb.co/J3h5YqM/monster.png\"\r\n        },\r\n        {\r\n          \"id\": 3,\r\n          \"projectName\": \"My Million Friends Newsletter\",\r\n          \"description\": \"En este espacio, encontrarás consejos prácticos, tutoriales, reflexiones sobre mi día a día como programadora y más!\",\r\n          \"url\": \"https://www.linkedin.com/newsletters/my-million-friends-7245934844273115136\",\r\n          \"image\": \"https://i.ibb.co/yV3VQKH/news.png\"\r\n        },\r\n        {\r\n          \"id\": 4,\r\n          \"projectName\": \"Serverless Project AWS DynamoDB\",\r\n          \"description\": \"Crear una API RESTful que interactúa con una base de datos DynamoDB para gestionar una lista de tareas.\",\r\n          \"url\": \"https://github.com/Orliluq/serverless-project\",\r\n          \"image\": \"https://i.ibb.co/5MgMBzm/server.png\"\r\n        },\r\n        {\r\n          \"id\": 5,\r\n          \"projectName\": \"Foro Hub\",\r\n          \"description\": \"Esta aplicación permite a los usuarios crear tópicos, responder a los mismos y participar en discusiones.\",\r\n          \"url\": \"https://github.com/Orliluq/ForoHub\",\r\n          \"image\": \"https://i.ibb.co/W601cgS/hub.png\"\r\n        },\r\n        {\r\n          \"id\": 6,\r\n          \"projectName\": \"My Million Friend Blog\",\r\n          \"description\": \"Plantilla de blog estática limpia, elegante y rápida! Desarrollada usando Astro.\",\r\n          \"url\": \"https://my-million-friend-blog.vercel.app/\",\r\n          \"image\": \"https://i.ibb.co/rpDZ3W7/blogastro.png\"\r\n        },\r\n        {\r\n          \"id\": 7,\r\n          \"projectName\": \"Hello Kitty Shopping Cart\",\r\n          \"description\": \"Carrito de compras virtual de una tienda de Hello Kitty. Desarrollado con HTML, CSS y JavaScript.\",\r\n          \"url\": \"https://hello-kitty-carrito-de-compra.vercel.app/\",\r\n          \"image\": \"https://i.ibb.co/pyn9nTV/shoppincart.png\"\r\n        },\r\n        {\r\n          \"id\": 8,\r\n          \"projectName\": \"Portfolio\",\r\n          \"description\": \"Portfolio personal. Desarrollado con las tecnologías de JavaScript, CSS, Reactjs y Nextjs.\",\r\n          \"url\": \"https://portfolio-next-snowy-two.vercel.app/\",\r\n          \"image\": \"https://i.ibb.co/G3xRLrX/contact.jpg\"\r\n        },\r\n        {\r\n          \"id\": 9,\r\n          \"projectName\": \"DLCA Technology\",\r\n          \"description\": \"Proyecto Grupal en Henry. Desarrollada con JS, Reactjs, ExpressJs, PostgreSQL.\",\r\n          \"url\": \"https://pf-dlca-technology.vercel.app/\",\r\n          \"image\": \"https://i.ibb.co/Xth8Sd0/dlca-logo.png\"\r\n        },\r\n        {\r\n          \"id\": 10,\r\n          \"projectName\": \"Simple Blog\",\r\n          \"description\": \"Siguiendo Tutorial de CosasDeDevs. Desarrollo de una aplicación web con Django desde 0.\",\r\n          \"url\": \"https://orliluq.github.io/simple_blog/\",\r\n          \"image\": \"https://i.ibb.co/ssK3QLV/simpleblog.png\"\r\n        },\r\n        {\r\n          \"id\": 11,\r\n          \"projectName\": \"Challenge Front-End - Alura Geek\",\r\n          \"description\": \"Crear un e-commerce usando HTML, CSS y JavaScript. Figma AluraGeek.\",\r\n          \"url\": \"https://orliluq.github.io/AluraGeek/\",\r\n          \"image\": \"https://i.ibb.co/zQpbPMc/alurageek.jpg\"\r\n        },\r\n        {\r\n          \"id\": 12,\r\n          \"projectName\": \"Portfolio Creative\",\r\n          \"description\": \"A Simple Portfolio Template built with VueJS (Vite) + TailwindCss.\",\r\n          \"url\": \"https://portfolio-creative-six.vercel.app/\",\r\n          \"image\": \"https://i.ibb.co/c6cNCQ2/gifprogrammer.gif\"\r\n        },\r\n        {\r\n          \"id\": 13,\r\n          \"projectName\": \"Portfolio personal\",\r\n          \"description\": \"Portfolio desarrollado en JavaScript, con React y Vite.\",\r\n          \"url\": \"https://portfolio-js-six.vercel.app/\",\r\n          \"image\": \"https://i.ibb.co/dKpbPyv/portfoliojs.jpg\"\r\n        },\r\n        {\r\n          \"id\": 14,\r\n          \"projectName\": \"Creative Fashion\",\r\n          \"description\": \"eShop de moda, tecnología y accesorios.\",\r\n          \"url\": \"https://creative-fashion.vercel.app/\",\r\n          \"image\": \"https://i.ibb.co/H7vLfn1/creativefashion.png\"\r\n        },\r\n        {\r\n          \"id\": 15,\r\n          \"projectName\": \"🚧 En Construcción 🚧\",\r\n          \"description\": \"eShop de tecnología y artículos de electrónica y computación, baterías y consumibles.\",\r\n          \"url\": \"https://ck-importca.vercel.app/404\",\r\n          \"image\": \"https://i.ibb.co/8Kjb5N9/ckimport.png\"\r\n        }\r\n      ],\r\n      \"skills\": [\r\n        {\r\n          \"id\": null,\r\n          \"skillName\": \"HTML5\",\r\n          \"proficiency\": \"Experto\"\r\n        },\r\n        {\r\n          \"id\": null,\r\n          \"skillName\": \"CSS3\",\r\n          \"proficiency\": \"Experto\"\r\n        },\r\n        {\r\n          \"id\": null,\r\n          \"skillName\": \"Angular\",\r\n          \"proficiency\": \"Intermedio\"\r\n        },\r\n        {\r\n          \"id\": null,\r\n          \"skillName\": \"JavaScript\",\r\n          \"proficiency\": \"Experto\"\r\n        },\r\n        {\r\n          \"id\": null,\r\n          \"skillName\": \"TypeScript\",\r\n          \"proficiency\": \"Intermedio\"\r\n        },\r\n        {\r\n          \"id\": null,\r\n          \"skillName\": \"React\",\r\n          \"proficiency\": \"Intermedio\"\r\n        },\r\n        {\r\n          \"id\": null,\r\n          \"skillName\": \"Redux\",\r\n          \"proficiency\": \"Intermedio\"\r\n        },\r\n        {\r\n          \"id\": null,\r\n          \"skillName\": \"Redux Toolkit\",\r\n          \"proficiency\": \"Intermedio\"\r\n        },\r\n        {\r\n          \"id\": null,\r\n          \"skillName\": \"Tailwind CSS\",\r\n          \"proficiency\": \"Intermedio\"\r\n        },\r\n        {\r\n          \"id\": null,\r\n          \"skillName\": \"Next.js\",\r\n          \"proficiency\": \"Intermedio\"\r\n        },\r\n        {\r\n          \"id\": null,\r\n          \"skillName\": \"Sass\",\r\n          \"proficiency\": \"Intermedio\"\r\n        },\r\n        {\r\n          \"id\": null,\r\n          \"skillName\": \"Bootstrap\",\r\n          \"proficiency\": \"Intermedio\"\r\n        },\r\n        {\r\n          \"id\": null,\r\n          \"skillName\": \"Zustand\",\r\n          \"proficiency\": \"Básico\"\r\n        },\r\n        {\r\n          \"id\": null,\r\n          \"skillName\": \"Astro\",\r\n          \"proficiency\": \"Intermedio\"\r\n        },\r\n        {\r\n          \"id\": null,\r\n          \"skillName\": \"Vue\",\r\n          \"proficiency\": \"Básico\"\r\n        },\r\n        {\r\n          \"id\": null,\r\n          \"skillName\": \"Nuxt.js\",\r\n          \"proficiency\": \"Básico\"\r\n        },\r\n        {\r\n          \"id\": null,\r\n          \"skillName\": \"NestJs\",\r\n          \"proficiency\": \"Intermedio\"\r\n        },\r\n        {\r\n          \"id\": null,\r\n          \"skillName\": \"Node.js\",\r\n          \"proficiency\": \"Experto\"\r\n        },\r\n        {\r\n          \"id\": null,\r\n          \"skillName\": \"Express.js\",\r\n          \"proficiency\": \"Intermedio\"\r\n        },\r\n        {\r\n          \"id\": null,\r\n          \"skillName\": \"Jest\",\r\n          \"proficiency\": \"Intermedio\"\r\n        },\r\n        {\r\n          \"id\": null,\r\n          \"skillName\": \"Swagger\",\r\n          \"proficiency\": \"Intermedio\"\r\n        },\r\n        {\r\n          \"id\": null,\r\n          \"skillName\": \"Java\",\r\n          \"proficiency\": \"Intermedio\"\r\n        },\r\n        {\r\n          \"id\": null,\r\n          \"skillName\": \"Spring Boot\",\r\n          \"proficiency\": \"Intermedio\"\r\n        },\r\n        {\r\n          \"id\": null,\r\n          \"skillName\": \"PHP\",\r\n          \"proficiency\": \"Básico\"\r\n        },\r\n        {\r\n          \"id\": null,\r\n          \"skillName\": \"Python\",\r\n          \"proficiency\": \"Básico\"\r\n        },\r\n        {\r\n          \"id\": null,\r\n          \"skillName\": \"Sequelize\",\r\n          \"proficiency\": \"Intermedio\"\r\n        },\r\n        {\r\n          \"id\": null,\r\n          \"skillName\": \"PostgreSQL\",\r\n          \"proficiency\": \"Intermedio\"\r\n        },\r\n        {\r\n          \"id\": null,\r\n          \"skillName\": \"Prisma\",\r\n          \"proficiency\": \"Básico\"\r\n        },\r\n        {\r\n          \"id\": null,\r\n          \"skillName\": \"MySQL\",\r\n          \"proficiency\": \"Intermedio\"\r\n        },\r\n        {\r\n          \"id\": null,\r\n          \"skillName\": \"MongoDB\",\r\n          \"proficiency\": \"Básico\"\r\n        }\r\n      ],\r\n      \"experiences\": [\r\n        {\r\n          \"id\": null,\r\n          \"company\": \"Alura Latam\",\r\n          \"position\": \"ONEHelper\",\r\n          \"startDate\": \"2024-09-01\",\r\n          \"endDate\": null,\r\n          \"description\": \"Como ONEHelper, tengo la oportunidad de marcar la diferencia en la comunidad. Ayudar a otros estudiantes de la especialización BackEnd a lograr el éxito en el programa.\"\r\n        },\r\n        {\r\n          \"id\": null,\r\n          \"company\": \"TryCatch Factory\",\r\n          \"position\": \"Full Stack Developer - Tech Lead\",\r\n          \"startDate\": \"2024-05-01\",\r\n          \"endDate\": null,\r\n          \"description\": \"Desarrolladora Full Stack en el Team Throwdevs, trabajando en frameworks serverless con Lambda Functions. Tech Lead del Team 3 Tech Titans, gestionando una aplicación web para facturación. Utilizando TypeScript y React para el frontend y Java con Spring Boot para el backend.\"\r\n        }\r\n      ],\r\n      \"educations\": [\r\n        {\r\n          \"id\": null,\r\n          \"institution\": \"Alura Latam - ONE Oracle Next Education\",\r\n          \"degree\": \"Especialización Back-End Developer\",\r\n          \"startDate\": \"2024-01-01\",\r\n          \"endDate\": null,\r\n          \"description\": \"Los cursos incluyen programación orientada a objetos Java, Java y Spring Boot, y desarrollo web Backend.\"\r\n        },\r\n        {\r\n          \"id\": null,\r\n          \"institution\": \"Henry\",\r\n          \"degree\": \"Full Stack Web Developer\",\r\n          \"startDate\": \"2023-03-01\",\r\n          \"endDate\": \"2023-09-01\",\r\n          \"description\": \"Capacitada para gestionar todo el ciclo de desarrollo de un proyecto, desde el diseño de la interfaz de usuario hasta la implementación del backend y la integración de diversos componentes y tecnologías del lado del frontend e implementación de bases de datos.\"\r\n        },\r\n        {\r\n          \"id\": null,\r\n          \"institution\": \"Universidad Nacional Experimental Simón Rodríguez\",\r\n          \"degree\": \"Licenciatura en Administración\",\r\n          \"startDate\": \"2000-10-02\",\r\n          \"endDate\": \"2007-07-16\",\r\n          \"description\": \"Licenciada en Administración con mención honorífica en Recursos Materiales y Financieros.\"\r\n        }\r\n      ],\r\n      \"languages\": [\r\n        {\r\n          \"id\": 1,\r\n          \"languages\": \"Español\",\r\n          \"level\": \"Nativo\"\r\n        },\r\n        {\r\n          \"id\": 2,\r\n          \"languages\": \"Inglés\",\r\n          \"level\": \"B1\"\r\n        }\r\n      ],\r\n      \"certificates\": [\r\n        {\r\n          \"id\": null,\r\n          \"certificates\": \"Java y Spring Boot G6 - ONE\",\r\n          \"year\": 2024\r\n        },\r\n        {\r\n          \"id\": null,\r\n          \"certificates\": \"Beginner Training in G6 Programming – ONE / Alura Latam\",\r\n          \"year\": 2024\r\n        },\r\n        {\r\n          \"id\": null,\r\n          \"certificates\": \"Git Bases, Github / Latam Challenge\",\r\n          \"year\": 2024\r\n        },\r\n        {\r\n          \"id\": null,\r\n          \"certificates\": \"Diplomado en Programación con PHP / Politécnico de Colombia\",\r\n          \"year\": 2023\r\n        },\r\n        {\r\n          \"id\": null,\r\n          \"certificates\": \"Diplomado en Programación con Java / Politécnico de Colombia\",\r\n          \"year\": 2023\r\n        },\r\n        {\r\n          \"id\": null,\r\n          \"certificates\": \"Introduction to Back-End Development / Meta\",\r\n          \"year\": 2023\r\n        },\r\n        {\r\n          \"id\": null,\r\n          \"certificates\": \"Python Programming Basic / Huawei\",\r\n          \"year\": 2023\r\n        },\r\n        {\r\n          \"id\": null,\r\n          \"certificates\": \"SCRUM Fundamentals / SCRUMstudy\",\r\n          \"year\": 2023\r\n        },\r\n        {\r\n          \"id\": null,\r\n          \"certificates\": \"Programming with Java Standard / Fundación Telefónica\",\r\n          \"year\": 2022\r\n        },\r\n        {\r\n          \"id\": null,\r\n          \"certificates\": \"Accredited Software Testing Fundamentals Certification (ASTFC)TM\",\r\n          \"year\": 2024\r\n        },\r\n        {\r\n          \"id\": null,\r\n          \"certificates\": \"Programming with Python for Data Analysis\",\r\n          \"year\": 2024\r\n        }\r\n      ]\r\n    }\r\n  ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}data",
+					"host": [
+						"{{url}}data"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "password",
+				"value": "admin123",
+				"type": "string"
+			},
+			{
+				"key": "username",
+				"value": "admin",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "http://localhost:8080/"
+		},
+		{
+			"key": "Autorización",
+			"value": "",
+			"type": "string"
+		}
+	]
+}

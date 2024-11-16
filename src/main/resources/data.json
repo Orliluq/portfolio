@@ -1,0 +1,389 @@
+{
+  "users": [
+    {
+      "user_id": 1,
+      "portfolio_id": 1,
+      "name": "Orli Dun",
+      "email": "orlibet@gmail.com",
+      "description": "¡API para la gestión de mis proyectos personales. Detalles: API RESTful utilizando Java, Spring Boot y PostgreSQL. La API debe permitir la creación, lectura, actualización y eliminación de proyectos en una base de datos relacional.",
+      "contact": {
+        "contact_id": 1,
+        "phone": "123456789",
+        "email": "orlibet@gmail.com",
+        "address": "Caracas, Venezuela"
+      },
+      "projects": [
+        {
+          "id": 1,
+          "projectName": "🎃 Halloween Trivia API 🎃",
+          "description": "Este proyecto implica el desarrollo de una API RESTful en Java que sirve como un juego de preguntas centrado en Halloween.",
+          "url": "https://github.com/Orliluq/trivia",
+          "image": "https://i.ibb.co/ThjGzSM/trivia.png"
+        },
+        {
+          "id": 2,
+          "projectName": "👻 API de Monstruos 👻",
+          "description": "Este proyecto te invita a crear una API RESTful en Java para gestionar una base de datos de criaturas de Halloween.",
+          "url": "https://github.com/Orliluq/monster",
+          "image": "https://i.ibb.co/J3h5YqM/monster.png"
+        },
+        {
+          "id": 3,
+          "projectName": "My Million Friends Newsletter",
+          "description": "En este espacio, encontrarás consejos prácticos, tutoriales, reflexiones sobre mi día a día como programadora y más!",
+          "url": "https://www.linkedin.com/newsletters/my-million-friends-7245934844273115136",
+          "image": "https://i.ibb.co/yV3VQKH/news.png"
+        },
+        {
+          "id": 4,
+          "projectName": "Serverless Project AWS DynamoDB",
+          "description": "Crear una API RESTful que interactúa con una base de datos DynamoDB para gestionar una lista de tareas.",
+          "url": "https://github.com/Orliluq/serverless-project",
+          "image": "https://i.ibb.co/5MgMBzm/server.png"
+        },
+        {
+          "id": 5,
+          "projectName": "Foro Hub",
+          "description": "Esta aplicación permite a los usuarios crear tópicos, responder a los mismos y participar en discusiones.",
+          "url": "https://github.com/Orliluq/ForoHub",
+          "image": "https://i.ibb.co/W601cgS/hub.png"
+        },
+        {
+          "id": 6,
+          "projectName": "My Million Friend Blog",
+          "description": "Plantilla de blog estática limpia, elegante y rápida! Desarrollada usando Astro.",
+          "url": "https://my-million-friend-blog.vercel.app/",
+          "image": "https://i.ibb.co/rpDZ3W7/blogastro.png"
+        },
+        {
+          "id": 7,
+          "projectName": "Hello Kitty Shopping Cart",
+          "description": "Carrito de compras virtual de una tienda de Hello Kitty. Desarrollado con HTML, CSS y JavaScript.",
+          "url": "https://hello-kitty-carrito-de-compra.vercel.app/",
+          "image": "https://i.ibb.co/pyn9nTV/shoppincart.png"
+        },
+        {
+          "id": 8,
+          "projectName": "Portfolio",
+          "description": "Portfolio personal. Desarrollado con las tecnologías de JavaScript, CSS, Reactjs y Nextjs.",
+          "url": "https://portfolio-next-snowy-two.vercel.app/",
+          "image": "https://i.ibb.co/G3xRLrX/contact.jpg"
+        },
+        {
+          "id": 9,
+          "projectName": "DLCA Technology",
+          "description": "Proyecto Grupal en Henry. Desarrollada con JS, Reactjs, ExpressJs, PostgreSQL.",
+          "url": "https://pf-dlca-technology.vercel.app/",
+          "image": "https://i.ibb.co/Xth8Sd0/dlca-logo.png"
+        },
+        {
+          "id": 10,
+          "projectName": "Simple Blog",
+          "description": "Siguiendo Tutorial de CosasDeDevs. Desarrollo de una aplicación web con Django desde 0.",
+          "url": "https://orliluq.github.io/simple_blog/",
+          "image": "https://i.ibb.co/ssK3QLV/simpleblog.png"
+        },
+        {
+          "id": 11,
+          "projectName": "Challenge Front-End - Alura Geek",
+          "description": "Crear un e-commerce usando HTML, CSS y JavaScript. Figma AluraGeek.",
+          "url": "https://orliluq.github.io/AluraGeek/",
+          "image": "https://i.ibb.co/zQpbPMc/alurageek.jpg"
+        },
+        {
+          "id": 12,
+          "projectName": "Portfolio Creative",
+          "description": "A Simple Portfolio Template built with VueJS (Vite) + TailwindCss.",
+          "url": "https://portfolio-creative-six.vercel.app/",
+          "image": "https://i.ibb.co/c6cNCQ2/gifprogrammer.gif"
+        },
+        {
+          "id": 13,
+          "projectName": "Portfolio personal",
+          "description": "Portfolio desarrollado en JavaScript, con React y Vite.",
+          "url": "https://portfolio-js-six.vercel.app/",
+          "image": "https://i.ibb.co/dKpbPyv/portfoliojs.jpg"
+        },
+        {
+          "id": 14,
+          "projectName": "Creative Fashion",
+          "description": "eShop de moda, tecnología y accesorios.",
+          "url": "https://creative-fashion.vercel.app/",
+          "image": "https://i.ibb.co/H7vLfn1/creativefashion.png"
+        },
+        {
+          "id": 15,
+          "projectName": "🚧 En Construcción 🚧",
+          "description": "eShop de tecnología y artículos de electrónica y computación, baterías y consumibles.",
+          "url": "https://ck-importca.vercel.app/404",
+          "image": "https://i.ibb.co/8Kjb5N9/ckimport.png"
+        }
+      ],
+      "skills": [
+        {
+          "id": null,
+          "skillName": "HTML5",
+          "proficiency": "Experto"
+        },
+        {
+          "id": null,
+          "skillName": "CSS3",
+          "proficiency": "Experto"
+        },
+        {
+          "id": null,
+          "skillName": "Angular",
+          "proficiency": "Intermedio"
+        },
+        {
+          "id": null,
+          "skillName": "JavaScript",
+          "proficiency": "Experto"
+        },
+        {
+          "id": null,
+          "skillName": "TypeScript",
+          "proficiency": "Intermedio"
+        },
+        {
+          "id": null,
+          "skillName": "React",
+          "proficiency": "Intermedio"
+        },
+        {
+          "id": null,
+          "skillName": "Redux",
+          "proficiency": "Intermedio"
+        },
+        {
+          "id": null,
+          "skillName": "Redux Toolkit",
+          "proficiency": "Intermedio"
+        },
+        {
+          "id": null,
+          "skillName": "Tailwind CSS",
+          "proficiency": "Intermedio"
+        },
+        {
+          "id": null,
+          "skillName": "Next.js",
+          "proficiency": "Intermedio"
+        },
+        {
+          "id": null,
+          "skillName": "Sass",
+          "proficiency": "Intermedio"
+        },
+        {
+          "id": null,
+          "skillName": "Bootstrap",
+          "proficiency": "Intermedio"
+        },
+        {
+          "id": null,
+          "skillName": "Zustand",
+          "proficiency": "Básico"
+        },
+        {
+          "id": null,
+          "skillName": "Astro",
+          "proficiency": "Intermedio"
+        },
+        {
+          "id": null,
+          "skillName": "Vue",
+          "proficiency": "Básico"
+        },
+        {
+          "id": null,
+          "skillName": "Nuxt.js",
+          "proficiency": "Básico"
+        },
+        {
+          "id": null,
+          "skillName": "NestJs",
+          "proficiency": "Intermedio"
+        },
+        {
+          "id": null,
+          "skillName": "Node.js",
+          "proficiency": "Experto"
+        },
+        {
+          "id": null,
+          "skillName": "Express.js",
+          "proficiency": "Intermedio"
+        },
+        {
+          "id": null,
+          "skillName": "Jest",
+          "proficiency": "Intermedio"
+        },
+        {
+          "id": null,
+          "skillName": "Swagger",
+          "proficiency": "Intermedio"
+        },
+        {
+          "id": null,
+          "skillName": "Java",
+          "proficiency": "Intermedio"
+        },
+        {
+          "id": null,
+          "skillName": "Spring Boot",
+          "proficiency": "Intermedio"
+        },
+        {
+          "id": null,
+          "skillName": "PHP",
+          "proficiency": "Básico"
+        },
+        {
+          "id": null,
+          "skillName": "Python",
+          "proficiency": "Básico"
+        },
+        {
+          "id": null,
+          "skillName": "Sequelize",
+          "proficiency": "Intermedio"
+        },
+        {
+          "id": null,
+          "skillName": "PostgreSQL",
+          "proficiency": "Intermedio"
+        },
+        {
+          "id": null,
+          "skillName": "Prisma",
+          "proficiency": "Básico"
+        },
+        {
+          "id": null,
+          "skillName": "MySQL",
+          "proficiency": "Intermedio"
+        },
+        {
+          "id": null,
+          "skillName": "MongoDB",
+          "proficiency": "Básico"
+        }
+      ],
+      "experiences": [
+        {
+          "id": null,
+          "company": "Alura Latam",
+          "position": "ONEHelper",
+          "startDate": "2024-09-01",
+          "endDate": null,
+          "description": "Como ONEHelper, tengo la oportunidad de marcar la diferencia en la comunidad. Ayudar a otros estudiantes de la especialización BackEnd a lograr el éxito en el programa."
+        },
+        {
+          "id": null,
+          "company": "TryCatch Factory",
+          "position": "Full Stack Developer - Tech Lead",
+          "startDate": "2024-05-01",
+          "endDate": null,
+          "description": "Desarrolladora Full Stack en el Team Throwdevs, trabajando en frameworks serverless con Lambda Functions. Tech Lead del Team 3 Tech Titans, gestionando una aplicación web para facturación. Utilizando TypeScript y React para el frontend y Java con Spring Boot para el backend."
+        }
+      ],
+      "educations": [
+        {
+          "id": null,
+          "institution": "Alura Latam - ONE Oracle Next Education",
+          "degree": "Especialización Back-End Developer",
+          "startDate": "2024-01-01",
+          "endDate": null,
+          "description": "Los cursos incluyen programación orientada a objetos Java, Java y Spring Boot, y desarrollo web Backend."
+        },
+        {
+          "id": null,
+          "institution": "Henry",
+          "degree": "Full Stack Web Developer",
+          "startDate": "2023-03-01",
+          "endDate": "2023-09-01",
+          "description": "Capacitada para gestionar todo el ciclo de desarrollo de un proyecto, desde el diseño de la interfaz de usuario hasta la implementación del backend y la integración de diversos componentes y tecnologías del lado del frontend e implementación de bases de datos."
+        },
+        {
+          "id": null,
+          "institution": "Universidad Nacional Experimental Simón Rodríguez",
+          "degree": "Licenciatura en Administración",
+          "startDate": "2000-10-02",
+          "endDate": "2007-07-16",
+          "description": "Licenciada en Administración con mención honorífica en Recursos Materiales y Financieros."
+        }
+      ],
+      "languages": [
+        {
+          "id": 1,
+          "languages": "Español",
+          "level": "Nativo"
+        },
+        {
+          "id": 2,
+          "languages": "Inglés",
+          "level": "B1"
+        }
+      ],
+      "certificates": [
+        {
+          "id": null,
+          "certificates": "Java y Spring Boot G6 - ONE",
+          "year": 2024
+        },
+        {
+          "id": null,
+          "certificates": "Beginner Training in G6 Programming – ONE / Alura Latam",
+          "year": 2024
+        },
+        {
+          "id": null,
+          "certificates": "Git Bases, Github / Latam Challenge",
+          "year": 2024
+        },
+        {
+          "id": null,
+          "certificates": "Diplomado en Programación con PHP / Politécnico de Colombia",
+          "year": 2023
+        },
+        {
+          "id": null,
+          "certificates": "Diplomado en Programación con Java / Politécnico de Colombia",
+          "year": 2023
+        },
+        {
+          "id": null,
+          "certificates": "Introduction to Back-End Development / Meta",
+          "year": 2023
+        },
+        {
+          "id": null,
+          "certificates": "Python Programming Basic / Huawei",
+          "year": 2023
+        },
+        {
+          "id": null,
+          "certificates": "SCRUM Fundamentals / SCRUMstudy",
+          "year": 2023
+        },
+        {
+          "id": null,
+          "certificates": "Programming with Java Standard / Fundación Telefónica",
+          "year": 2022
+        },
+        {
+          "id": null,
+          "certificates": "Accredited Software Testing Fundamentals Certification (ASTFC)TM",
+          "year": 2024
+        },
+        {
+          "id": null,
+          "certificates": "Programming with Python for Data Analysis",
+          "year": 2024
+        }
+      ]
+    }
+  ]
+}
