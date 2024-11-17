@@ -1,0 +1,65 @@
+erDiagram
+    Portfolio {
+        Long id
+        String name
+        String description
+    }
+    User {
+        Long id
+        String name
+        String email
+    }
+    Project {
+        Long id
+        String projectName
+        String description
+        String url
+        String image
+    }
+    Experience {
+        Long id
+        String company
+        String position
+        Date startDate
+        Date endDate
+        String description
+        EmploymentType type
+    }
+    Education {
+        Long id
+        String institution
+        String degree
+        Date startDate
+        Date endDate
+        String description
+    }
+    Skill {
+        Long id
+        String skillName
+        String proficiency
+    }
+    Language {
+        Long id
+        String languages
+        String level
+    }
+    Certificate {
+        Long id
+        String certificates
+        int year
+    }
+    Contact {
+        Long id
+        String phone
+        String email
+        String address
+    }
+
+    User ||--|| Portfolio : has
+    User ||--o{ Project : has
+    User ||--o{ Experience : has
+    User ||--o{ Education : has
+    User ||--o{ Skill : has
+    User ||--o{ Language : has
+    User ||--o{ Certificate : has
+    User ||--|| Contact : has
