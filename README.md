@@ -42,7 +42,7 @@ src/main/java/api.portfolio
   
 ## 📋 Diagramas de entidad-relación (ERD): 
 Un diagrama visual puede ayudar a comprender mejor las relaciones entre las entidades.
-![diag](https://github.com/user-attachments/assets/acfaa05f-f741-423d-867b-55d96b9fb9df)
+![diag](https://github.com/user-attachments/assets/6e9d8deb-1afa-4294-9a96-8ac44d2c8e0d)
 
 ## 📂 Instalación y Ejecución 
 1. Clonar el repositorio:
