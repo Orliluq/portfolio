@@ -17,7 +17,7 @@ Este proyecto implementa una API RESTful en Java utilizando Spring Boot y Postgr
 - Maven/Gradle: Gestor de dependencias.
 
 ## 🖥️ Estructura del Proyecto 
-### Entidades:
+### 📑 Entidades:
 - User: Representa a un usuario con atributos como nombre, correo electrónico y una relación con sus proyectos, experiencias, educación, habilidades y contacto.
 - Project: Representa un proyecto con atributos como nombre, descripción, URL, etc.
 - Experience: Representa una experiencia laboral con atributos como empresa, puesto, etc.
@@ -35,7 +35,7 @@ src/main/java/api.portfolio
 └── shared
 ```
 
-### Relaciones entre Entidades:
+### 📈 Relaciones entre Entidades:
 - Uno a muchos: Un usuario puede tener muchos proyectos, experiencias, educaciones y habilidades.
 - Uno a uno: Un usuario tiene un único contacto.
 - Muchos a uno: Un proyecto, experiencia, educación o habilidad pertenece a un único usuario.
