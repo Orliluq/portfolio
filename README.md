@@ -24,9 +24,16 @@ Este proyecto implementa una API RESTful en Java utilizando Spring Boot y Postgr
 - Education: Representa una formación académica con atributos como institución, título, etc.
 - Skill: Representa una habilidad con atributos como nombre y nivel.
 - Contact: Representa la información de contacto del usuario.
-- Controladores: Expone los endpoints REST para interactuar con las entidades.
-- Servicios: Contiene la lógica de negocio para las operaciones CRUD.
-- Repositorios: Interactúa con la base de datos a través de JPA.
+
+### 🏗️ Estructura de paquetes para Clean Architecture 
+src/main/java/api.portfolio
+```
+└── domain            
+└── application       
+└── infrastructure    
+└── config
+└── shared
+```
 
 ### Relaciones entre Entidades:
 - Uno a muchos: Un usuario puede tener muchos proyectos, experiencias, educaciones y habilidades.
@@ -35,7 +42,7 @@ Este proyecto implementa una API RESTful en Java utilizando Spring Boot y Postgr
   
 ## 📋 Diagramas de entidad-relación (ERD): 
 Un diagrama visual puede ayudar a comprender mejor las relaciones entre las entidades.
-![erd](https://github.com/user-attachments/assets/f4fbb682-bcb5-41b6-ba7e-022bf890fcee)
+![diag](https://github.com/user-attachments/assets/acfaa05f-f741-423d-867b-55d96b9fb9df)
 
 ## 📂 Instalación y Ejecución 
 1. Clonar el repositorio:
@@ -53,18 +60,18 @@ Un diagrama visual puede ayudar a comprender mejor las relaciones entre las enti
 
 ## 📊 Endpoints de la API
 - Usuarios:
-+ `GET /users`: Obtener todos los usuarios
-+ `GET /users/{id}`: Obtener un usuario por ID
-+ `POST /users`: Crear un nuevo usuario
-+ `PUT /users/{id}`: Actualizar un usuario
-+ `DELETE /users/{id}`: Eliminar un usuario
++ `GET /api/v1/users`: Obtener todos los usuarios
++ `GET /api/v1/users/{id}`: Obtener un usuario por ID
++ `POST /api/v1/users`: Crear un nuevo usuario
++ `PUT /api/v1/users/{id}`: Actualizar un usuario
++ `DELETE /api/v1/users/{id}`: Eliminar un usuario
 - Proyectos, Experiencias, Educación, Habilidades, Contactos:... (similar a los usuarios)
 
 # 📝 API Documentation
 The API is documented using Swagger/OpenAPI. You can access the API documentation via:
 
 Swagger UI URL: `http://localhost:8080/swagger-ui.html`
-![swagger](https://github.com/user-attachments/assets/c5ca37a5-b13d-41bc-aa3b-370b63888854)
+![swagger](https://github.com/user-attachments/assets/66025cff-e636-4d22-8b7a-f63bc5f7fd55)
 
 # 🏷️ License
 This project is licensed under the MIT License. See the LICENSE file for details.
